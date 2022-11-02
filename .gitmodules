@@ -1,0 +1,4 @@
+[submodule "external/YCSB-C"]
+	path = external/YCSB-C
+	url = https://github.com/range3/YCSB-C.git
+	update = merge
