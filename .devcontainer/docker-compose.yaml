@@ -1,0 +1,35 @@
+version: "3.9"
+x-common:
+  &x-common
+  build:
+    context: .
+    dockerfile: Dockerfile
+  init: true
+  environment:
+    DEV_HOSTS: d1
+  volumes:
+    - ..:/workspaces/kvs-evaluation:cached
+    - spack:/home/vscode/.cache/spack
+    - dot-spack:/home/vscode/.spack
+  shm_size: '5gb'
+  ulimits:
+      memlock: -1
+  cap_add:
+    - SYS_PTRACE
+  security_opt:
+    - seccomp:unconfined
+  privileged: true
+  command: >
+    bash -c "sleep infinity"
+
+services:
+  dev1:
+    <<: *x-common
+    hostname: d1
+    container_name: kvs_eval_d1
+
+volumes:
+  spack:
+    external: true
+  dot-spack:
+    external: true
