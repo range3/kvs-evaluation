@@ -10,6 +10,7 @@ RUN \
     perl \
     python3 \
     python3-pip \
+    python3-venv \
     libopenmpi-dev \
     ffmpeg \
   # Clean up
@@ -23,6 +24,7 @@ RUN \
     jinja2 \
     Pygments \
     ipykernel \
-    matplotlib
+    matplotlib \
+    pandas
 
 USER vscode
