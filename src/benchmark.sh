@@ -11,6 +11,7 @@ export LD_LIBRARY_PATH="/usr/local/lib"
 
 db_list=(
   lock_stl
+  lock_stl_map
   tbb_rand
   tbb_scan
 )
